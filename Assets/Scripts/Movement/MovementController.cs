@@ -54,6 +54,12 @@ public class MovementController: MonoBehaviour
         set => isGrappling = value;
     }
     
+    public bool OnGround
+    {
+        get => onGround;
+        set => onGround = value;
+    }
+    
 
     private void Awake()
     {
@@ -214,14 +220,12 @@ public class MovementController: MonoBehaviour
          {
              _manager.onGround = false;
              _manager.softbody.AddForce(Vector3.up * _manager.jumpPower, ForceMode.VelocityChange);
+             _manager.ChangeState(MovementState.IdleWalkRun);
          }
 
          public void Execute()
          {
-             if (_manager.onGround)
-             {
-                 _manager.ChangeState(MovementState.IdleWalkRun);
-             }
+             
          }
 
          public void Exit()

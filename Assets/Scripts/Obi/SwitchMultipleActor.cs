@@ -5,6 +5,7 @@ namespace Obi
 {
     public class SwitchMultipleActor : MonoBehaviour
     {
+        public MazeController mcMazeController;
         public ObiSoftbody softbody;
         public ObiParticleRenderer softBodyRenderer;
         
@@ -49,32 +50,27 @@ namespace Obi
                         fluid.enabled = false;
                         fluidRenderer.enabled = false;
                         softBodyRenderer.enabled = true;
-                        Debug.Log("切换粒子为固态");
+                        
+                        
+                        mcMazeController.enabled = false;
+                        transform.GetComponentInChildren<MovementController>().enabled = true;
+                        Debug.Log("fluid to softbody");
                         
                         // softbody.solver.velocities.Clear();
                         // fluid.SetSelfCollisions(false);
                         // fluid.surfaceCollisions = false;
 
                         // softBodyRenderer.enabled = true;
-                        // Debug.Log("切换粒子为固态");
 
                         //Debug.Log(" fluid.solverIndices.Length: " + fluid.solverIndices.Length);
                         //Debug.Log(" softbody.solverIndices.Length: " + softbody.solverIndices.Length);
-
+                        currentState = false;
                     }
                     else
                     {
-                        softbody.enabled = true;
-                        softBodyRenderer.enabled = false;
-                        fluidRenderer.enabled = false;
-                        fluid.enabled = true;
-                        //fluid.ReEmitShape();
-                        softbody.enabled = false;
-                        fluidRenderer.enabled = true;
-                        Debug.Log("切换粒子为液态");
-
+                        SoftbodyToFluid();
                     }
-                    currentState = !currentState;
+
                 }
             }
 
@@ -93,7 +89,7 @@ namespace Obi
                     fluidRenderer.enabled = false;
 
                     softBodyRenderer.enabled = true;
-                    Debug.Log("切换粒子为固态");
+                    Debug.Log("softbody to fluid");
                     return;
                 }
                 
@@ -113,6 +109,23 @@ namespace Obi
                     
                     fluid.solver.positions[fluidSolverIndex] = positionToSet;
                 }
+            }
+        }
+
+        public void SoftbodyToFluid()
+        {
+            if (!currentState)
+            {
+                softbody.enabled = true;
+                softBodyRenderer.enabled = false;
+                fluidRenderer.enabled = false;
+                fluid.enabled = true;
+                //fluid.ReEmitShape();
+                softbody.enabled = false;
+                fluidRenderer.enabled = true;
+                Debug.Log("softbody to fluid");
+                
+                currentState = true;
             }
         }
     }
