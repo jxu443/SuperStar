@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class RespawnTrigger : MonoBehaviour
 {
-    
     public Transform respawnPoint;
     void OnTriggerEnter(Collider other)
     {

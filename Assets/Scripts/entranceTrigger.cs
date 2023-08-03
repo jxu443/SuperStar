@@ -14,7 +14,7 @@ public class entranceTrigger : MonoBehaviour
         //Debug.Log("trigger enter " + other.name); // ObiSoftbody
         if (other.gameObject.CompareTag("Player")) 
         {
-            Debug.Log(other.name+ " has enter the entrance");
+            //Debug.Log(other.name+ " has enter the entrance");
             var cmp = other.transform.GetComponentInParent<SwitchMultipleActor>();
             if (cmp != null)
             {
