@@ -28,6 +28,11 @@ namespace Obi
 
         private void Update()
         {
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                SwitchParticleState = true;
+            }
+            
             if (SwitchParticleState)
             {
                 SwitchParticleState = false;

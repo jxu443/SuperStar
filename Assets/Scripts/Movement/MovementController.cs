@@ -20,16 +20,30 @@ public class MovementController: MonoBehaviour
     public float airControl = 0.2f;
     
     [Header("Grapple")]
-    public KeyCode grappleKey = KeyCode.Alpha4;
+    public KeyCode grappleKey = KeyCode.E;
     public LayerMask whatIsGrappleable;
     public float maxGrappleDistance;
     public float overshootYAxis;
+
+    [Header("Swing")] 
+    public KeyCode swingKey = KeyCode.Mouse0;
+    public Transform orientation;
+    public float horizontalAcceleration;
+    public float forwardAcceleration;
+    public float extendCableSpeed;
+    public LineRenderer lr;
+    public Transform gunTip;
+    
+
+
+    
 
     public enum MovementState
     {
         IdleWalkRun,
         Jump,
         Grapple,
+        Swing,
     }
 
     /*** private fields ***/
@@ -40,6 +54,8 @@ public class MovementController: MonoBehaviour
     private bool onGround = false;
     private Vector3 grapplePoint;
     private bool isGrappling = false;
+
+    private bool isSwinging = false;
 
 
     public Vector3 GrapplePoint
@@ -52,6 +68,12 @@ public class MovementController: MonoBehaviour
     {
         get => isGrappling;
         set => isGrappling = value;
+    }
+    
+    public bool IsSwinging
+    {
+        get => isSwinging;
+        set => isSwinging = value;
     }
     
     public bool OnGround
@@ -88,15 +110,17 @@ public class MovementController: MonoBehaviour
         
         curState.Execute();
         
-        if (Input.GetKeyDown(KeyCode.Space) && onGround)
-        {
-            ChangeState(MovementState.Jump);
-        }
 
         if (Input.GetKeyDown(grappleKey) && !isGrappling)
         {
             ChangeState(MovementState.Grapple);
         }
+
+        if (Input.GetKeyDown(swingKey) && !isSwinging)
+        {
+            ChangeState(MovementState.Swing);
+        }
+
     }
     
     void ChangeState(MovementState type)
@@ -125,7 +149,7 @@ public class MovementController: MonoBehaviour
             if (contact.distance > 0.01)
             {
                 var col = world.colliderHandles[contact.bodyB].owner;
-                if (col != null)
+                if (col != null) // TODO: check tag
                 {
                     onGround = true;
                     return;
@@ -139,6 +163,7 @@ public class MovementController: MonoBehaviour
         States.Add(MovementState.IdleWalkRun,new IdleWalkRun(this));
         States.Add(MovementState.Jump, new Jump(this));
         States.Add(MovementState.Grapple, new Grapple(this));
+        States.Add(MovementState.Swing, new Swing(this));
     }
     
     #region FSM States 
@@ -150,8 +175,8 @@ public class MovementController: MonoBehaviour
     }
     
     // must be onGround to enter this state
-     class IdleWalkRun : IState
-     { 
+    class IdleWalkRun : IState
+    { 
          private MovementController _manager;
          private Transform _referenceFrame;
          private float _acceleration;
@@ -170,6 +195,13 @@ public class MovementController: MonoBehaviour
      
          public void Execute()
          {
+             
+             // can only jump during idleWalkRun state
+             if (Input.GetKeyDown(KeyCode.Space) && _manager.onGround)
+             {
+                 _manager.ChangeState(MovementState.Jump);
+             } 
+             
              Vector3 direction = Vector3.zero;
 
              // Determine movement direction:
@@ -205,10 +237,10 @@ public class MovementController: MonoBehaviour
          {
            
          }
-     }
+    }
 
-     class Jump : IState
-     {
+    class Jump : IState
+    {
          private MovementController _manager;
 
          public Jump(MovementController manager)
@@ -233,10 +265,10 @@ public class MovementController: MonoBehaviour
             
          }
          
-     }
+    }
      
-     class Grapple : IState
-     {
+    class Grapple : IState
+    {
          private MovementController _manager;
          private Transform _referenceFrame;
          private DateTime _grappleStartTime;
@@ -272,6 +304,10 @@ public class MovementController: MonoBehaviour
                  JumpToPosition(grapplePoint, highestPointOnArc);
 
              }
+             else
+             {
+                 _manager.ChangeState(MovementState.IdleWalkRun);
+             }
 
          }
 
@@ -303,7 +339,6 @@ public class MovementController: MonoBehaviour
                  _manager.solver.velocities[solverIndex] = velocityToSet;
 
              }
-             //_manager.softbody.AddForce(velocityToSet * _manager.airControl, ForceMode.VelocityChange);
          }
          
          private Vector3 CalculateJumpVelocity(Vector3 startPoint, Vector3 endPoint, float trajectoryHeight)
@@ -318,7 +353,135 @@ public class MovementController: MonoBehaviour
 
              return velocityXZ + velocityY;
          }
-     }
-     #endregion
+    }
+
+    class Swing : IState
+    {
+        private MovementController _manager; 
+        private Transform _referenceFrame;
+        private SpringJoint joint = null;
+        private Vector3 swingPoint;
+        
+        private Vector3 currentGrapplePosition;
+
+        public Swing(MovementController manager)
+        {
+            this._manager = manager;
+            this._referenceFrame = manager.referenceFrame;
+        }
+         
+        public void Enter()
+        {
+            RaycastHit hit;
+
+            if(Physics.Raycast(_referenceFrame.position, _referenceFrame.forward, out hit, _manager.maxGrappleDistance, _manager.whatIsGrappleable))
+            { 
+                _manager.IsSwinging = true;
+                
+                swingPoint = hit.point;
+                joint = _manager.gameObject.AddComponent<SpringJoint>();
+                joint.autoConfigureConnectedAnchor = false;
+                joint.connectedAnchor = swingPoint;
+
+                float distanceFromPoint = Vector3.Distance(_manager.transform.position, swingPoint);
+
+                // the distance grapple will try to keep from grapple point. 
+                joint.maxDistance = distanceFromPoint * 0.8f;
+                joint.minDistance = distanceFromPoint * 0.25f;
+
+                // customize values as you like
+                joint.spring = 20f;
+                joint.damper = 10f;
+                joint.massScale = 10f;
+                
+                _manager.lr.positionCount = 2;
+                currentGrapplePosition = _manager.gunTip.position;
+            } 
+            else
+            {
+                _manager.ChangeState(MovementState.IdleWalkRun);
+            }
+
+        }
+         
+        public void Execute()
+        {
+            if (Input.GetKeyUp(_manager.swingKey))
+            {
+                _manager.ChangeState(MovementState.IdleWalkRun);
+                return;
+            }
+            
+            OdmGearMovement();
+            DrawRope();
+
+        }
+
+        public void Exit()
+        {
+            _manager.IsSwinging = false;
+            _manager.lr.positionCount = 0;
+
+            Destroy(joint);
+        }
+
+        private void OdmGearMovement()
+        {
+            Vector3 direction = Vector3.zero;
+
+            if (Input.GetKey(KeyCode.W))
+            {
+                direction += _referenceFrame.forward * _manager.horizontalAcceleration;
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                direction += -_referenceFrame.right * _manager.horizontalAcceleration;
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                direction += _referenceFrame.right * _manager.horizontalAcceleration;
+            }
+            
+            float effectiveAcceleration = _manager.horizontalAcceleration;
+            _manager.softbody.AddForce(direction.normalized * effectiveAcceleration, ForceMode.Acceleration);
+            
+            // shorten cable
+            if (Input.GetKey(KeyCode.Space))
+            {
+                Vector3 directionToPoint = swingPoint - _manager.transform.position;
+                _manager.softbody.AddForce(directionToPoint.normalized * _manager.forwardAcceleration, ForceMode.Acceleration);
+
+                float distanceFromPoint = Vector3.Distance(_manager.transform.position, swingPoint);
+
+                joint.maxDistance = distanceFromPoint * 0.8f;
+                joint.minDistance = distanceFromPoint * 0.25f;
+            }
+            
+            // extend cable
+            if (Input.GetKey(KeyCode.S))
+            {
+                float extendedDistanceFromPoint = Vector3.Distance(_manager.transform.position, swingPoint) + _manager.extendCableSpeed;
+
+                joint.maxDistance = extendedDistanceFromPoint * 0.8f;
+                joint.minDistance = extendedDistanceFromPoint * 0.25f;
+            }
+        }
+        
+        private void DrawRope()
+        {
+            // if not grappling, don't draw rope
+            if (!joint) return;
+
+            currentGrapplePosition = Vector3.Lerp(currentGrapplePosition, swingPoint, Time.deltaTime * 8f);
+            
+            _manager.lr.SetPosition(0, _manager.gunTip.position);
+            _manager.lr.SetPosition(1, currentGrapplePosition);
+        }
+    }
+    
+    
+
+
+    #endregion
     
 }

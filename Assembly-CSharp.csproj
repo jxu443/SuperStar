@@ -54,7 +54,6 @@
      <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\LookAroundCamera.cs" />
      <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\ColliderHighlighter.cs" />
      <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\SlowmoToggler.cs" />
-     <Compile Include="Assets\Scripts\entranceTrigger.cs" />
      <Compile Include="Assets\Scripts\FirstPerson_testOnly\PlayerCam.cs" />
      <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\ObjectLimit.cs" />
      <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\ObiParticleCounter.cs" />
@@ -83,7 +82,6 @@
      <Compile Include="Assets\Obi\Samples\RopeAndRod\SampleResources\Scripts\CraneController.cs" />
      <Compile Include="Assets\Obi\Samples\Cloth\SampleResources\Scripts\CannonBall.cs" />
      <Compile Include="Assets\Obi\Samples\RopeAndRod\SampleResources\Scripts\ExtendableGrapplingHook.cs" />
-     <Compile Include="Assets\Scripts\RespawnTrigger.cs" />
      <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\ActorSpawner.cs" />
      <Compile Include="Assets\Scripts\PCG\MathGraphMorph.cs" />
      <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\ExtrapolationCamera.cs" />
@@ -116,7 +114,9 @@
      <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\CollisionEventHandler.cs" />
      <Compile Include="Assets\Obi\Samples\RopeAndRod\SampleResources\Scripts\GrapplingHook.cs" />
      <Compile Include="Assets\Obi\Samples\RopeAndRod\SampleResources\Scripts\WrapRopeGameController.cs" />
+     <Compile Include="Assets\Scripts\Triggers\RespawnTrigger.cs" />
      <Compile Include="Assets\Obi\Samples\Fluid\SampleResources\Scripts\FluidJetController.cs" />
+     <Compile Include="Assets\Scripts\Triggers\SceneLoader.cs" />
      <Compile Include="Assets\Obi\Samples\Softbody\SampleResources\Scripts\DeformationToColors.cs" />
      <Compile Include="Assets\Scripts\Movement\PlayerMovementAdvanced.cs" />
      <Compile Include="Assets\Obi\Samples\RopeAndRod\SampleResources\Scripts\HosePump.cs" />
@@ -136,6 +136,7 @@
      <Compile Include="Assets\Scripts\PCG\FunctionLibrary.cs" />
      <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\ColorFromViscosity.cs" />
      <Compile Include="Assets\Obi\Samples\Cloth\SampleResources\Scripts\BoatController.cs" />
+     <Compile Include="Assets\Scripts\Triggers\entranceTrigger.cs" />
      <Compile Include="Assets\Obi\Samples\Cloth\SampleResources\Scripts\SackGenerator.cs" />
      <Compile Include="Assets\Obi\Samples\Softbody\SampleResources\Scripts\PostOnRail.cs" />
      <Compile Include="Assets\Obi\Samples\Softbody\SampleResources\Scripts\ObstacleCourseController.cs" />
@@ -216,6 +217,7 @@
      <None Include="Assets\Obi\Resources\ObiMaterials\ObiEllipsoids.cginc" />
      <Folder Include="Assets\Obi\Samples\Common\SampleResources\Scripts" />
      <None Include="Assets\Obi\Resources\ObiMaterials\URP\ParticleShaderURP.shader" />
+     <Folder Include="Assets\Scripts\Triggers" />
      <Folder Include="Assets\Obi\Samples\Softbody\SampleResources\Models" />
      <Folder Include="Assets\Obi\Samples\Common\SampleResources\Textures" />
      <Folder Include="Assets\Obi\Samples\Softbody\SampleResources\Prefabs" />
