@@ -61,7 +61,7 @@ namespace Obi
                         if (mcMazeController is not null) 
                             mcMazeController.enabled = false;
                         
-                        var mc = softbody.GetComponent<MovementController>();
+                        var mc = softbody.GetComponent<SoftbodyMovement>();
                         if (mc is not null) 
                             mc.enabled = true;
                         
@@ -121,7 +121,7 @@ namespace Obi
                 softbody.enabled = true;
                 softBodyRenderer.enabled = false;
                 
-                var mc = softbody.GetComponent<MovementController>();
+                var mc = softbody.GetComponent<SoftbodyMovement>();
                 if (mc is not null) 
                     mc.enabled = false;
                 

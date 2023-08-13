@@ -18,7 +18,7 @@ public class entranceTrigger : MonoBehaviour
             var cmp = other.transform.GetComponentInParent<SwitchMultipleActor>();
             if (cmp != null)
             {
-                other.transform.GetComponent<MovementController>().enabled = false;
+                other.transform.GetComponent<SoftbodyMovement>().enabled = false;
                 
                 cmp.SoftbodyToFluid();
                 Invoke(nameof(closeEntrance), 0.5f);

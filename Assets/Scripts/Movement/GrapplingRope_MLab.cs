@@ -9,7 +9,7 @@ using UnityEngine;
 public class GrapplingRope_MLab : MonoBehaviour
 {
     [Header("References")]
-    public MovementController mc;
+    public SoftbodyMovement mc;
     public Transform gunTip;
 
     [Header("Settings")]

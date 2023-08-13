@@ -6,7 +6,7 @@ using Obi;
 
 
 [RequireComponent(typeof(ObiSoftbody))]
-public class MovementController: MonoBehaviour
+public class SoftbodyMovement: MonoBehaviour
 {
     public ObiSolver solver;
     [Header("IdleWalkRun")]
@@ -26,17 +26,14 @@ public class MovementController: MonoBehaviour
     public float overshootYAxis;
 
     [Header("Swing")] 
-    public KeyCode swingKey = KeyCode.Mouse0;
+    public KeyCode swingKey = KeyCode.Q;
     public Transform orientation;
     public float horizontalAcceleration;
     public float forwardAcceleration;
     public float extendCableSpeed;
     public LineRenderer lr;
     public Transform gunTip;
-    
 
-
-    
 
     public enum MovementState
     {
@@ -177,12 +174,12 @@ public class MovementController: MonoBehaviour
     // must be onGround to enter this state
     class IdleWalkRun : IState
     { 
-         private MovementController _manager;
+         private SoftbodyMovement _manager;
          private Transform _referenceFrame;
          private float _acceleration;
          
 
-         public IdleWalkRun(MovementController manager)
+         public IdleWalkRun(SoftbodyMovement manager)
          {
              this._manager = manager;
          }
@@ -241,9 +238,9 @@ public class MovementController: MonoBehaviour
 
     class Jump : IState
     {
-         private MovementController _manager;
+         private SoftbodyMovement _manager;
 
-         public Jump(MovementController manager)
+         public Jump(SoftbodyMovement manager)
          {
              this._manager = manager;
          }
@@ -269,12 +266,12 @@ public class MovementController: MonoBehaviour
      
     class Grapple : IState
     {
-         private MovementController _manager;
+         private SoftbodyMovement _manager;
          private Transform _referenceFrame;
          private DateTime _grappleStartTime;
          
 
-         public Grapple (MovementController manager)
+         public Grapple (SoftbodyMovement manager)
          {
              this._manager = manager;
              this._referenceFrame = manager.referenceFrame;
@@ -357,14 +354,14 @@ public class MovementController: MonoBehaviour
 
     class Swing : IState
     {
-        private MovementController _manager; 
+        private SoftbodyMovement _manager; 
         private Transform _referenceFrame;
         private SpringJoint joint = null;
         private Vector3 swingPoint;
         
         private Vector3 currentGrapplePosition;
 
-        public Swing(MovementController manager)
+        public Swing(SoftbodyMovement manager)
         {
             this._manager = manager;
             this._referenceFrame = manager.referenceFrame;
