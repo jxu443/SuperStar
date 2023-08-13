@@ -17,7 +17,7 @@ public class MazeRender : MonoBehaviour
     private Transform Obisolver = null;
     
     [SerializeField]
-    private Transform catcherPrefab = null; 
+    private GameObject catcher = null; 
         
     [SerializeField]
     private Transform wallPrefab = null;
@@ -65,9 +65,9 @@ public class MazeRender : MonoBehaviour
         frontPlane.transform.SetParent(transform.parent, false);
         
         // maze catcher
-        var catcher = Instantiate(catcherPrefab) as Transform;
-        catcher.position = new Vector3(0, -height/2 - 4, 0);
-        catcher.localScale = new Vector3(width * 3f, 2, 3);
+        catcher.transform.position = new Vector3(0, -height/2 - 4, 0.2f);
+        catcher.transform.localScale = new Vector3(width + 10f, 2, 3);
+        catcher.SetActive(true);
         
     }
 
