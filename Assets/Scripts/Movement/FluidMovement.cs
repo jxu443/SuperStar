@@ -11,21 +11,57 @@ public class FluidMovement : MonoBehaviour
     public float _acceleration = 4f;
     public ObiEmitter fluid;
     public ObiSoftbody softbody;
+    public ObiSolver fluidSolver;
+    public ObiFluidEmitterBlueprint fluidBlueprint;
+    
+    // trigger list
+    public ObiCollider sugerTrigger;
+    public JugController jc;
+
+    public ObiCollider respawnTrigger = null;
 
     private bool freezed = false;
     private float duration = 0;
     private float transitionDuration = -1;
+    private bool moveable = false;
 
     void Start()
     {
         Debug.Log(" fluid.solverIndices.Length: " + fluid.solverIndices.Length);
         Debug.Log(" softbody.solverIndices.Length: " + softbody.solverIndices.Length);
+        fluidSolver.OnCollision += Solver_OnCollision;
+    }
+    
+    private void OnDestroy()
+    {
+        fluidSolver.OnCollision -= Solver_OnCollision;
+    }
+    
+    private void Solver_OnCollision(ObiSolver s, ObiSolver.ObiCollisionEventArgs e)
+    {
+        var world = ObiColliderWorld.GetInstance();
+        foreach (Oni.Contact contact in e.contacts)
+        {
+            if (contact.distance < 0.01f)
+            {
+                var col = world.colliderHandles[contact.bodyB].owner;
+                if (sugerTrigger == col)
+                {
+                    Debug.Log("FluidMOvement: Suger trigger, switch to JugController");
+                    
+                    this.enabled = false;
+                    jc.enabled = true;
+                } 
+                // else if (respawnTrigger == col)
+                // {
+                //     Debug.Log("FluidMOvement: respawn");
+                // } 
+            }
+        }
     }
 
     private void OnEnable()
     {
-        //Debug.Log("OnEnable");
-        
         for (int i = 0; i < fluid.solverIndices.Length; ++i)
         {
             int fluidSolverIndex = fluid.solverIndices[i];
@@ -36,19 +72,45 @@ public class FluidMovement : MonoBehaviour
             fluid.solver.velocities[fluidSolverIndex] = softbody.solver.velocities[SBsolverIndex];
         }
         
+        if (fluidSolver.viscosities[0] >= 1f)
+        {
+            moveable = true;
+            freezeMovement();
+        }
     }
-    
+
     private void OnDisable()
     {
         //Debug.Log("OnDisable");
         freezed = false;
         duration = 0;
         transitionDuration = -1;
+        
+        freezeMovement();
+        moveable = false;
     }
+
+    
+    // freeze the velocity of the softbody and fluid 
+    void freezeMovement()
+    {
+        for (int i = 0; i < softbody.solverIndices.Length; ++i)
+        {
+            int SBsolverIndex = softbody.solverIndices[i];
+            int fluidSolverIndex = fluid.solverIndices[i];
+            softbody.solver.velocities[SBsolverIndex] = new Vector4(0,0,0,0);
+            fluid.solver.velocities[fluidSolverIndex] = new Vector4(0,0,0,0);
+        }
+        freezed = true;
+    }
+       
 
 
     void Update()
     {
+        if (!moveable) return;
+
+        // fluid is moveable 
         bool keyPress = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) 
                         || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.Space);
 
@@ -56,16 +118,8 @@ public class FluidMovement : MonoBehaviour
         {
             if (!freezed && softbody.solver.velocities[0].magnitude < 2f)
             {
-                for (int i = 0; i < softbody.solverIndices.Length; ++i)
-                {
-                    int SBsolverIndex = softbody.solverIndices[i];
-                    int fluidSolverIndex = fluid.solverIndices[i];
-                    softbody.solver.velocities[SBsolverIndex] = new Vector4(0,0,0,0);
-                    fluid.solver.velocities[fluidSolverIndex] = new Vector4(0,0,0,0);
-                }
-                freezed = true;
+                freezeMovement();
             }
-        
             return;
         }
         
