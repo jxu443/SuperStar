@@ -9,7 +9,7 @@ using UnityEngine;
 public class GrapplingRope_MLab : MonoBehaviour
 {
     [Header("References")]
-    public SoftbodyMovement mc;
+    public SoftbodyMovement softbodyMove;
     public Transform gunTip;
 
     [Header("Settings")]
@@ -42,7 +42,7 @@ public class GrapplingRope_MLab : MonoBehaviour
     void DrawRope()
     {
         // if not grappling, don't draw rope
-        if (!mc.IsGrappling)
+        if (!softbodyMove.IsGrappling)
         {
             
             currentGrapplePosition = gunTip.position;
@@ -71,7 +71,7 @@ public class GrapplingRope_MLab : MonoBehaviour
         spring.SetStrength(strength);
         spring.Update(Time.deltaTime);
 
-        Vector3 grapplePoint = mc.GrapplePoint;
+        Vector3 grapplePoint = softbodyMove.GrapplePoint;
         Vector3 gunTipPosition = gunTip.position;
 
         // find the upwards direction relative to the rope

@@ -47,7 +47,7 @@ public class FluidMovement : MonoBehaviour
                 var col = world.colliderHandles[contact.bodyB].owner;
                 if (sugerTrigger == col)
                 {
-                    Debug.Log("FluidMOvement: Suger trigger, switch to JugController");
+                    //Debug.Log("FluidMOvement: Suger trigger, switch to JugController");
                     
                     this.enabled = false;
                     jc.enabled = true;
@@ -85,8 +85,6 @@ public class FluidMovement : MonoBehaviour
         freezed = false;
         duration = 0;
         transitionDuration = -1;
-        
-        freezeMovement();
         moveable = false;
     }
 

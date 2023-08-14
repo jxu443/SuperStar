@@ -65,7 +65,7 @@ public class JugController : MonoBehaviour
         purityLabel.text = concentration + "% 溶解度";
         
         emitter.solver.colors[k] = emitter.solver.userData[k];
-        Debug.Log("Suger color is " + suger.color);
+        //Debug.Log("Suger color is " + suger.color);
 
         if (concentration >= 95)
         {
