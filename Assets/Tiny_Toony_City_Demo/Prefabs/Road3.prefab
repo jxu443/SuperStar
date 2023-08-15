@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 2264315122431756286}
   - component: {fileID: 8325239561570372986}
   - component: {fileID: 5605342585435384786}
-  - component: {fileID: 7535628173437070877}
-  - component: {fileID: 7640756712590772525}
   m_Layer: 3
   m_Name: Asphalt (3)
   m_TagString: Untagged
@@ -85,44 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7535628173437070877
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2022506604663508873}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 7.999995, y: 0.50000006, z: 3.9999976}
-  m_Center: {x: 0, y: -0.24999999, z: -0.00000005960466}
---- !u!114 &7640756712590772525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2022506604663508873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6757b231cedd544c583ef8aeaf773b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thickness: 0
-  material: {fileID: 0}
-  filter: -65535
-  m_SourceCollider: {fileID: 7535628173437070877}
-  m_DistanceField: {fileID: 0}
 --- !u!1 &2405225504086354611
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,8 +94,6 @@ GameObject:
   - component: {fileID: 5174520373677201376}
   - component: {fileID: 3721837085497249029}
   - component: {fileID: 3897953894074564387}
-  - component: {fileID: 6435008914511472878}
-  - component: {fileID: 5471670579846250899}
   m_Layer: 3
   m_Name: Asphalt
   m_TagString: Untagged
@@ -208,44 +166,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6435008914511472878
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2405225504086354611}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 7.999995, y: 0.50000006, z: 3.9999976}
-  m_Center: {x: 0, y: -0.24999999, z: -0.00000005960466}
---- !u!114 &5471670579846250899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2405225504086354611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6757b231cedd544c583ef8aeaf773b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thickness: 0
-  material: {fileID: 0}
-  filter: -65535
-  m_SourceCollider: {fileID: 6435008914511472878}
-  m_DistanceField: {fileID: 0}
 --- !u!1 &3378815964917179003
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,8 +177,6 @@ GameObject:
   - component: {fileID: 6960927415010259058}
   - component: {fileID: 5124511248206255158}
   - component: {fileID: 7317450853566695275}
-  - component: {fileID: 5729093893807259468}
-  - component: {fileID: 1725038491944007594}
   m_Layer: 3
   m_Name: Asphalt (2)
   m_TagString: Untagged
@@ -331,44 +249,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5729093893807259468
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3378815964917179003}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 7.999995, y: 0.50000006, z: 3.9999976}
-  m_Center: {x: 0, y: -0.24999999, z: -0.00000005960466}
---- !u!114 &1725038491944007594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3378815964917179003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6757b231cedd544c583ef8aeaf773b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thickness: 0
-  material: {fileID: 0}
-  filter: -65535
-  m_SourceCollider: {fileID: 5729093893807259468}
-  m_DistanceField: {fileID: 0}
 --- !u!1 &3899578874814298407
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,8 +296,6 @@ GameObject:
   - component: {fileID: 4052346521561473520}
   - component: {fileID: 3675714394981739793}
   - component: {fileID: 2761499214158892156}
-  - component: {fileID: 6425816812613321950}
-  - component: {fileID: 6285530272915338893}
   m_Layer: 3
   m_Name: Asphalt (1)
   m_TagString: Untagged
@@ -490,44 +368,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6425816812613321950
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6503388556953509160}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 7.999995, y: 0.50000006, z: 3.9999976}
-  m_Center: {x: 0, y: -0.24999999, z: -0.00000005960466}
---- !u!114 &6285530272915338893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6503388556953509160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6757b231cedd544c583ef8aeaf773b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thickness: 0
-  material: {fileID: 0}
-  filter: -65535
-  m_SourceCollider: {fileID: 6425816812613321950}
-  m_DistanceField: {fileID: 0}
 --- !u!1 &7505022542602062743
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,8 +379,6 @@ GameObject:
   - component: {fileID: 6057112867411451317}
   - component: {fileID: 5469236929953995802}
   - component: {fileID: 2304098178934359849}
-  - component: {fileID: 3801268669413314492}
-  - component: {fileID: 8560954446396057634}
   m_Layer: 3
   m_Name: Asphalt (4)
   m_TagString: Untagged
@@ -613,41 +451,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3801268669413314492
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7505022542602062743}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 7.999995, y: 0.50000006, z: 3.9999976}
-  m_Center: {x: 0, y: -0.24999999, z: -0.00000005960466}
---- !u!114 &8560954446396057634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7505022542602062743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6757b231cedd544c583ef8aeaf773b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thickness: 0
-  material: {fileID: 0}
-  filter: -65535
-  m_SourceCollider: {fileID: 3801268669413314492}
-  m_DistanceField: {fileID: 0}
