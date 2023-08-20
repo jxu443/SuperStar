@@ -27,3 +27,7 @@ https://github.com/jxu443/SuperStar/assets/60420982/12290e70-95b7-42f2-88c0-becb
 
 https://github.com/jxu443/SuperStar/assets/60420982/8469b33f-b36a-4415-83e9-f3dbcee3580d
 
+https://github.com/jxu443/SuperStar/assets/60420982/025f3424-77df-4649-97f3-9ff6fd3617e4
+
+https://github.com/jxu443/SuperStar/assets/60420982/5856984a-f958-4a41-b2a6-2c36e04c3b26
+
