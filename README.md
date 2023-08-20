@@ -1,6 +1,6 @@
 <h1 align="center"> 腾讯魔方2023暑期客户端实习 超新星项目</h1>
-  <h3 align="center"> 水滴的冒险 </h3>
-  <h5 align="center"> Jiaxi Xu </h5>
+  <h2 align="center"> 水滴的冒险 </h3>
+  <h4 align="center"> Jiaxi Xu </h5>
   
   
   <!-- TABLE OF CONTENTS -->
