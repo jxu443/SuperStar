@@ -18,6 +18,14 @@
   </details>
   
   ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+  # 简介
+  【游戏风格】可爱 卡通
+  【游戏类型】基于物理的解谜跑酷游戏
+  【游戏玩法】主角是一滴水/果冻，玩家需要控制水滴在不同场景中完成任务
+  
+  https://github.com/jxu443/SuperStar/assets/60420982/88a4d8ae-1ad9-4ed9-a5b0-0a6b6dbbe6d4
+
+  https://github.com/jxu443/SuperStar/assets/60420982/675762c6-11cf-4022-b3c5-09624908a4f4
   
   # 技术点 <a id="feature"></a>
   
@@ -29,13 +37,10 @@ https://github.com/jxu443/SuperStar/assets/60420982/8469b33f-b36a-4415-83e9-f3db
 
 https://github.com/jxu443/SuperStar/assets/60420982/025f3424-77df-4649-97f3-9ff6fd3617e4
 
-https://github.com/jxu443/SuperStar/assets/60420982
 
-https://github.com/jxu443/SuperStar/assets/60420982/88a4d8ae-1ad9-4ed9-a5b0-0a6b6dbbe6d4
-
-/5856984a-f958-4a41-b2a6-2c36e04c3b26
+https://github.com/jxu443/SuperStar/assets/60420982/53ae372e-a247-43f6-983e-60b492468497
 
 
 
-https://github.com/jxu443/SuperStar/assets/60420982/675762c6-11cf-4022-b3c5-09624908a4f4
+
 
