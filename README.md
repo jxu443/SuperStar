@@ -29,5 +29,13 @@ https://github.com/jxu443/SuperStar/assets/60420982/8469b33f-b36a-4415-83e9-f3db
 
 https://github.com/jxu443/SuperStar/assets/60420982/025f3424-77df-4649-97f3-9ff6fd3617e4
 
-https://github.com/jxu443/SuperStar/assets/60420982/5856984a-f958-4a41-b2a6-2c36e04c3b26
+https://github.com/jxu443/SuperStar/assets/60420982
+
+https://github.com/jxu443/SuperStar/assets/60420982/88a4d8ae-1ad9-4ed9-a5b0-0a6b6dbbe6d4
+
+/5856984a-f958-4a41-b2a6-2c36e04c3b26
+
+
+
+https://github.com/jxu443/SuperStar/assets/60420982/675762c6-11cf-4022-b3c5-09624908a4f4
 
