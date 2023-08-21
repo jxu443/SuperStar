@@ -20,12 +20,14 @@ public class SoftbodyMovement: MonoBehaviour
     public float airControl = 0.2f;
     
     [Header("Grapple")]
+    public bool grappleEnabled = true;
     public KeyCode grappleKey = KeyCode.E;
     public LayerMask whatIsGrappleable;
     public float maxGrappleDistance;
     public float overshootYAxis;
 
     [Header("Swing")] 
+    public bool swingEnabled = true;
     public KeyCode swingKey = KeyCode.Q;
     public Transform orientation;
     public float horizontalAcceleration;
@@ -90,10 +92,6 @@ public class SoftbodyMovement: MonoBehaviour
     void Start()
     {
         softbody = GetComponent<ObiSoftbody>();
-        if (softbody == null)
-        {
-            Debug.LogError("No ObiSoftbody component found");
-        }
         softbody.solver.OnCollision += Solver_OnCollision;
     }
 
@@ -108,12 +106,12 @@ public class SoftbodyMovement: MonoBehaviour
         curState.Execute();
         
 
-        if (Input.GetKeyDown(grappleKey) && !isGrappling)
+        if (Input.GetKeyDown(grappleKey) && !isGrappling && grappleEnabled)
         {
             ChangeState(MovementState.Grapple);
         }
 
-        if (Input.GetKeyDown(swingKey) && !isSwinging)
+        if (Input.GetKeyDown(swingKey) && !isSwinging && swingEnabled)
         {
             ChangeState(MovementState.Swing);
         }
@@ -192,6 +190,13 @@ public class SoftbodyMovement: MonoBehaviour
      
          public void Execute()
          {
+             int solverIndex = _manager.softbody.solverIndices[0];
+             var vel = _manager.solver.velocities[solverIndex].magnitude;
+             if (vel > 10f)
+             {
+                 //Debug.Log("Velocity too high, pause force adding");
+                 return;
+             }
              
              // can only jump during idleWalkRun state
              if (Input.GetKeyDown(KeyCode.Space) && _manager.onGround)

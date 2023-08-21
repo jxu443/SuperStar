@@ -31,11 +31,11 @@ namespace Obi{
             if (unityRigidbody.isKinematic)
             {
                 // differentiate positions to obtain linear velocity:
-                unityRigidbody.velocity = (transform.position - prevPosition) / stepTime;
+                //unityRigidbody.velocity = (transform.position - prevPosition) / stepTime;
 
                 // differentiate rotations to obtain angular velocity:
                 Quaternion delta = transform.rotation * Quaternion.Inverse(prevRotation);
-                unityRigidbody.angularVelocity = new Vector3(delta.x, delta.y, delta.z) * 2.0f / stepTime;
+                //unityRigidbody.angularVelocity = new Vector3(delta.x, delta.y, delta.z) * 2.0f / stepTime;
             }
 
             prevPosition = transform.position;

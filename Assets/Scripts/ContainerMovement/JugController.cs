@@ -13,22 +13,26 @@ public class JugController : MonoBehaviour
     [Range(0, 1)]
     public float angularDrag = 0.2f;
 
+    float angularSpeed = 0;
+    float angle = 0;
+
+    
     public FluidColorizer suger;
     public ObiEmitter emitter;
     public Text purityLabel;
-
-    float angularSpeed = 0;
-    float angle = 0;
-    private int concentration = 0;
+    public GameObject jug;
+    public PhaseChange phaseChange;
+    public ThirdPersonCam thirdPersonCam;
+    public GameObject respawn;
+    public ObiCollider counter;
+    public ObiSoftbody softbody;
     
     HashSet<int> coloredParticles = new HashSet<int>();
-
-
-    private void OnEnable()
-    {
-        Debug.Log("Jug controller is enabled");
-    }
-
+    private int concentration = 0;
+    
+    HashSet<int> totalParticles = new HashSet<int>();
+    private int totalParticle = 720;
+    
     void Start()
     {
         emitter.solver.OnCollision += Solver_OnCollision;
@@ -50,48 +54,55 @@ public class JugController : MonoBehaviour
                 var col = world.colliderHandles[contact.bodyB].owner;
                 if (suger.collider == col)
                 {
-                    emitter.solver.userData[contact.bodyA] = suger.color;
+                    respawn.SetActive(false);
+                    purityLabel.gameObject.SetActive(true);
+                    thirdPersonCam.SwitchCameraStyle(ThirdPersonCam.CameraStyle.FixedJug);
                     
+                    emitter.solver.userData[contact.bodyA] = suger.color;
                     if (coloredParticles.Add(contact.bodyA))
                         UpdateScore(coloredParticles.Count, contact.bodyA);
                 }
-            }
+
+                if (counter == col)
+                {
+                    if(totalParticles.Add(contact.bodyA))
+                        totalParticle = totalParticles.Count;
+                }
+            } 
         }
     }
     
     public void UpdateScore(int coloredParticles, int k)
     {
-        concentration = Mathf.CeilToInt((coloredParticles / 720.0f) * 100);
-        purityLabel.text = concentration + "% 溶解度";
+        concentration = Mathf.CeilToInt((coloredParticles / (float)totalParticle) * 100f);
+        purityLabel.text = concentration + "% 溶解度, 请继续搅拌至90%以上";
         
         emitter.solver.colors[k] = emitter.solver.userData[k];
-        //Debug.Log("Suger color is " + suger.color);
 
-        if (concentration >= 95)
+        if (concentration >= 90)
         {
-            Debug.Log("finished, concentration >= 95");
             for (int i = 0; i < emitter.solverIndices.Length; ++i)
             {
                 int idx = emitter.solverIndices[i];
                 //emitter.solver.colors[idx] = emitter.solver.userData[idx];
                 emitter.solver.viscosities[idx] = 1f;
             }
-
+            
+            
             gameObject.GetComponent<JugController>().enabled = false;
             emitter.GetComponent<FluidMovement>().enabled = true;
-            gameObject.SetActive(false);
+            
+            thirdPersonCam.SwitchCameraStyle(ThirdPersonCam.CameraStyle.Basic);
+            purityLabel.gameObject.SetActive(false);
+            jug.SetActive(false);
+            phaseChange.SwitchPhase();
+            
+            softbody.Teleport(this.transform.position + new Vector3(0,2,0), Quaternion.Inverse(Quaternion.identity));
+            
+            
         }
     }
     
-    // void LateUpdate()
-    // {
-    //     for (int i = 0; i < emitter.solverIndices.Length; ++i)
-    //     {
-    //         int k = emitter.solverIndices[i];
-    //         emitter.solver.colors[k] = emitter.solver.userData[k];
-    //         emitter.solver.viscosities[k] = Mathf.Lerp(0.5f, 1f, concentration / 100f);
-    //     }
-    // }
 
     void Update()
     {

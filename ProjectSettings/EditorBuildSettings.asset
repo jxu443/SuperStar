@@ -6,10 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Level0_Maze.unity
+    path: Assets/Scenes/Level1_Kitchen.unity
     guid: 922287a1122037d479882eb6a2684841
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level1_grapple.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Level2_City.unity
+    guid: e7d0b06d9919ea245bb63903fb59bad5
+  - enabled: 0
+    path: Assets/Scenes/Level2_Room.unity
+    guid: 8fdb66b3d5f94c2488dec767fb72a89e
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}

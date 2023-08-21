@@ -12,7 +12,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{a96f5129-b2f3-b2d7-1135-aa4a21579472}</ProjectGuid>
+    <ProjectGuid>{22c82f5e-07a9-39d6-1ab3-91291e819da8}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -50,6 +50,8 @@
      <Compile Include="Assets\Obi\Samples\Fluid\SampleResources\Scripts\Teleport.cs" />
      <Compile Include="Assets\Obi\Samples\Cloth\SampleResources\Scripts\BoatFinishLine.cs" />
      <Compile Include="Assets\Scripts\FirstPerson_testOnly\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\ContainerMovement\MazeController.cs" />
+     <Compile Include="Assets\Scripts\UI\GameManager.cs" />
      <Compile Include="Assets\Obi\Samples\RopeAndRod\SampleResources\Scripts\RuntimeRopeGenerator.cs" />
      <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\LookAroundCamera.cs" />
      <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\ColliderHighlighter.cs" />
@@ -58,54 +60,54 @@
      <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\ObjectLimit.cs" />
      <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\ObiParticleCounter.cs" />
      <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\DebugParticleFrames.cs" />
-     <Compile Include="Assets\StarterAssets\TutorialInfo\Scripts\Readme.cs" />
      <Compile Include="Assets\Obi\Samples\RopeAndRod\SampleResources\Scripts\SpiralCurve.cs" />
-     <Compile Include="Assets\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualTouchZone.cs" />
      <Compile Include="Assets\Obi\Samples\RopeAndRod\SampleResources\Scripts\RopeTensionColorizer.cs" />
      <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\WorldSpaceGravity.cs" />
-     <Compile Include="Assets\Scripts\PCG\MazeController.cs" />
+     <Compile Include="Assets\Scripts\Movement\SoftbodyMovement.cs" />
      <Compile Include="Assets\Obi\Samples\Cloth\SampleResources\Scripts\StretchToColors.cs" />
+     <Compile Include="Assets\Scripts\PCG\Level0_maze\MazeRender.cs" />
+     <Compile Include="Assets\Scripts\UI\ScoreUpdator.cs" />
      <Compile Include="Assets\Obi\Samples\Fluid\SampleResources\Scripts\MazeManager.cs" />
      <Compile Include="Assets\Scripts\ThirdPersonCam.cs" />
      <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\Blinker.cs" />
      <Compile Include="Assets\Scripts\Obi\SwitchMultipleActor.cs" />
-     <Compile Include="Assets\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualButton.cs" />
      <Compile Include="Assets\Obi\Samples\Cloth\SampleResources\Scripts\AutoCannon.cs" />
      <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\ColorRandomizer.cs" />
      <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\ObiActorTeleport.cs" />
      <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\AddRandomVelocity.cs" />
      <Compile Include="Assets\Obi\Samples\RopeAndRod\SampleResources\Scripts\CharacterControl2D.cs" />
      <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\FPSDisplay.cs" />
-     <Compile Include="Assets\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualJoystick.cs" />
      <Compile Include="Assets\Obi\Samples\Fluid\SampleResources\Scripts\SolidifyOnContact.cs" />
-     <Compile Include="Assets\Scripts\PCG\MazeRender.cs" />
      <Compile Include="Assets\Obi\Samples\RopeAndRod\SampleResources\Scripts\CraneController.cs" />
      <Compile Include="Assets\Obi\Samples\Cloth\SampleResources\Scripts\CannonBall.cs" />
+     <Compile Include="Assets\Scripts\ContainerMovement\JugController.cs" />
      <Compile Include="Assets\Obi\Samples\RopeAndRod\SampleResources\Scripts\ExtendableGrapplingHook.cs" />
      <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\ActorSpawner.cs" />
+     <Compile Include="Assets\Scripts\moveFluid.cs" />
      <Compile Include="Assets\Scripts\PCG\MathGraphMorph.cs" />
      <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\ExtrapolationCamera.cs" />
      <Compile Include="Assets\Scripts\FirstPerson_testOnly\MoveCamera.cs" />
-     <Compile Include="Assets\Scripts\PCG\MazeGenerator.cs" />
-     <Compile Include="Assets\Scripts\Movement\MovementController.cs" />
      <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\ObjectDragger.cs" />
      <Compile Include="Assets\Obi\Samples\Fluid\SampleResources\Scripts\EmitOnKeyPress.cs" />
      <Compile Include="Assets\Obi\Samples\Fluid\SampleResources\Scripts\WaveGenerator.cs" />
+     <Compile Include="Assets\Scripts\Movement\FluidMovemmentCity.cs" />
      <Compile Include="Assets\Obi\Samples\RopeAndRod\SampleResources\Scripts\RopeNet.cs" />
      <Compile Include="Assets\Scripts\Movement\GrapplingRope_MLab.cs" />
-     <Compile Include="Assets\Scripts\removeCubeMesh.cs" />
      <Compile Include="Assets\Obi\Samples\Fluid\SampleResources\Scripts\OverlapTest.cs" />
      <Compile Include="Assets\Scripts\Movement\Spring_MLab.cs" />
      <Compile Include="Assets\Obi\Samples\RopeAndRod\SampleResources\Scripts\RopeBetweenTwoPoints.cs" />
+     <Compile Include="Assets\Scripts\CubeCollection\EnegyCubeSpawner.cs" />
      <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\CharacterController\ObiCharacter.cs" />
      <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\FirstPersonLauncher.cs" />
      <Compile Include="Assets\Obi\Samples\Cloth\SampleResources\Scripts\WaterTrigger.cs" />
      <Compile Include="Assets\Obi\Samples\Fluid\SampleResources\Scripts\ViscositySurfTensionToUserData.cs" />
      <Compile Include="Assets\Obi\Samples\RopeAndRod\SampleResources\Scripts\SnakeController.cs" />
+     <Compile Include="Assets\Scripts\Triggers\ToMazeTrigger.cs" />
      <Compile Include="Assets\Obi\Samples\Cloth\SampleResources\Scripts\Mine.cs" />
-     <Compile Include="Assets\StarterAssets\Mobile\Scripts\CanvasInputs\UICanvasControllerInput.cs" />
+     <Compile Include="Assets\Scripts\Movement\FluidMovement.cs" />
      <Compile Include="Assets\Obi\Samples\RopeAndRod\SampleResources\Scripts\RuntimeRopeGeneratorUse.cs" />
      <Compile Include="Assets\Obi\Samples\Softbody\SampleResources\Scripts\PlatformBalancer.cs" />
+     <Compile Include="Assets\Apartment_Door\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\ColorFromVelocity.cs" />
      <Compile Include="Assets\Obi\Samples\Cloth\SampleResources\Scripts\RaycastLasers.cs" />
      <Compile Include="Assets\Obi\Samples\Cloth\SampleResources\Scripts\BoatGameController.cs" />
@@ -114,124 +116,152 @@
      <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\CollisionEventHandler.cs" />
      <Compile Include="Assets\Obi\Samples\RopeAndRod\SampleResources\Scripts\GrapplingHook.cs" />
      <Compile Include="Assets\Obi\Samples\RopeAndRod\SampleResources\Scripts\WrapRopeGameController.cs" />
+     <Compile Include="Assets\Apartment_Door\Scripts\KeyController.cs" />
      <Compile Include="Assets\Scripts\Triggers\RespawnTrigger.cs" />
+     <Compile Include="Assets\Scripts\PCG\Level1_city\CityRender.cs" />
      <Compile Include="Assets\Obi\Samples\Fluid\SampleResources\Scripts\FluidJetController.cs" />
      <Compile Include="Assets\Scripts\Triggers\SceneLoader.cs" />
      <Compile Include="Assets\Obi\Samples\Softbody\SampleResources\Scripts\DeformationToColors.cs" />
      <Compile Include="Assets\Scripts\Movement\PlayerMovementAdvanced.cs" />
      <Compile Include="Assets\Obi\Samples\RopeAndRod\SampleResources\Scripts\HosePump.cs" />
      <Compile Include="Assets\Obi\Samples\Softbody\SampleResources\Scripts\SoftbodyController.cs" />
-     <Compile Include="Assets\StarterAssets\Mobile\Scripts\Utilities\MobileDisableAutoSwitchControls.cs" />
+     <Compile Include="Assets\Scripts\Obi\PhaseChange.cs" />
+     <Compile Include="Assets\Apartment_Door\Scripts\DoorController.cs" />
      <Compile Include="Assets\Obi\Samples\RopeAndRod\SampleResources\Scripts\RopeSweepCut.cs" />
+     <Compile Include="Assets\Scripts\CubeCollection\EnegyCubeMovement.cs" />
      <Compile Include="Assets\Obi\Samples\Fluid\SampleResources\Scripts\FluidColorizer.cs" />
      <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\CharacterController\SampleCharacterController.cs" />
      <Compile Include="Assets\Obi\Samples\Cloth\SampleResources\Scripts\Rudder.cs" />
      <Compile Include="Assets\Obi\Samples\Fluid\SampleResources\Scripts\MazeScoreFormatter.cs" />
      <Compile Include="Assets\Obi\Samples\Fluid\SampleResources\Scripts\Melt.cs" />
      <Compile Include="Assets\Obi\Samples\Cloth\SampleResources\Scripts\ClothTornEvent.cs" />
-     <Compile Include="Assets\StarterAssets\ThirdPersonController\Scripts\BasicRigidBodyPush.cs" />
      <Compile Include="Assets\Obi\Samples\Softbody\SampleResources\Scripts\SoftbodyRaycasts.cs" />
      <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\MoveAndRotate.cs" />
      <Compile Include="Assets\Obi\Samples\RopeAndRod\SampleResources\Scripts\RopeTenser.cs" />
+     <Compile Include="Assets\Scripts\PCG\Level0_maze\MazeGenerator.cs" />
      <Compile Include="Assets\Scripts\PCG\FunctionLibrary.cs" />
      <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\ColorFromViscosity.cs" />
      <Compile Include="Assets\Obi\Samples\Cloth\SampleResources\Scripts\BoatController.cs" />
+     <Compile Include="Assets\Scripts\UI\LifeUpdater.cs" />
      <Compile Include="Assets\Scripts\Triggers\entranceTrigger.cs" />
      <Compile Include="Assets\Obi\Samples\Cloth\SampleResources\Scripts\SackGenerator.cs" />
+     <Compile Include="Assets\Scripts\EnemyFollow.cs" />
      <Compile Include="Assets\Obi\Samples\Softbody\SampleResources\Scripts\PostOnRail.cs" />
      <Compile Include="Assets\Obi\Samples\Softbody\SampleResources\Scripts\ObstacleCourseController.cs" />
      <Compile Include="Assets\Obi\Samples\RopeAndRod\SampleResources\Scripts\CursorController.cs" />
      <Compile Include="Assets\Obi\Samples\Fluid\SampleResources\Scripts\BucketController.cs" />
-     <Compile Include="Assets\StarterAssets\InputSystem\StarterAssetsInputs.cs" />
+     <Compile Include="Assets\Scripts\Triggers\CatcherArriveTrigger.cs" />
      <Compile Include="Assets\Obi\Samples\RopeAndRod\SampleResources\Scripts\WrapRopePlayerController.cs" />
-     <Compile Include="Assets\StarterAssets\ThirdPersonController\Scripts\ThirdPersonController.cs" />
+     <Compile Include="Assets\Scripts\CubeCollection\KitchenCubeUpdator.cs" />
      <Folder Include="Assets" />
-     <Folder Include="Assets\StarterAssets\TutorialInfo\Scripts" />
+     <Folder Include="Assets\Scenes\Level2_City" />
      <Folder Include="Assets\Obi\Samples\Common\SampleResources\Animations" />
      <None Include="Assets\Shaders\ColoredPoint.shader" />
+     <Folder Include="Assets\Tiny_Toony_City_Demo\Textures" />
      <None Include="Assets\Obi\Samples\Fluid\SampleResources\Materials\StandardPerInstanceColor.shader" />
      <Folder Include="Assets\Obi\Resources\ObiMaterials" />
+     <Folder Include="Assets\AllSkyFree\Cold Night" />
+     <Folder Include="Assets\LowPolyDungeonsLite\Scenes" />
      <Folder Include="Assets\Obi\Samples\Softbody\SampleResources\Scripts" />
+     <Folder Include="Assets\Package04_Free_Kitchen\FreeKitchen\Textures\Version01" />
      <Folder Include="Assets\Obi\Plugins\x86" />
      <None Include="Assets\Obi\Resources\ObiMaterials\ParticleShader.shader" />
      <Folder Include="Assets\Scenes" />
      <None Include="Assets\Obi\Resources\ObiMaterials\UnityStandardCoreForwardSimpleBackfaces.cginc" />
+     <Folder Include="Assets\AllSkyFree\_AllSkyFreeDemoEnvironment\Materials" />
      <None Include="Assets\Obi\Resources\ObiMaterials\FluidThickness.shader" />
      <Folder Include="Assets\Obi\Samples\Common\SampleResources\Models" />
-     <Folder Include="Assets\StarterAssets\InputSystem" />
+     <Folder Include="Assets\StylizedHandPaintedDungeon(Free)\Demo\Demo_Scene" />
      <None Include="Assets\Obi\Resources\ObiMaterials\UnityStandardCoreForwardBackfaces.cginc" />
      <Folder Include="Assets\Obi\Samples\Cloth\SampleResources" />
      <None Include="Assets\Obi\Resources\ObiMaterials\URP\FluidShaderURP.shader" />
      <Folder Include="Assets\Scripts\FirstPerson_testOnly" />
      <None Include="Assets\Obi\Resources\ObiMaterials\URP\ObiLightingURP.cginc" />
-     <Folder Include="Assets\StarterAssets\ThirdPersonController\Scripts" />
+     <Folder Include="Assets\StylizedHandPaintedDungeon(Free)\Prefabs" />
+     <Folder Include="Assets\Package04_Free_Kitchen\FreeKitchen\Materials\Version01" />
+     <Folder Include="Assets\Scripts\UI" />
      <Folder Include="Assets\Obi\Samples\Softbody" />
-     <Folder Include="Assets\StarterAssets\Environment\Art\Materials" />
      <Folder Include="Assets\Obi\Resources" />
+     <Folder Include="Assets\Package04_Free_Kitchen\FreeKitchen\Prefabs\Version02" />
      <Folder Include="Assets\Obi\Samples\Softbody\SampleResources\Blueprints" />
+     <Folder Include="Assets\Tiny_Toony_City_Demo\Meshes" />
+     <Folder Include="Assets\StylizedHandPaintedDungeon(Free)\Demo\Assets_Preview" />
+     <Folder Include="Assets\Apartment_Door" />
      <Folder Include="Assets\Animations" />
      <Folder Include="Assets\Obi\Samples\Fluid\SampleResources\Scripts" />
+     <Folder Include="Assets\Tiny_Toony_City_Demo\PolygonBlacksmith\TT_Citizens_demo\models" />
      <Folder Include="Assets\Obi\Samples\Cloth\SampleResources\Prefabs" />
      <Folder Include="Assets\Scripts\Movement" />
      <None Include="Assets\Obi\Resources\ObiMaterials\ObiLightingBuiltIn.cginc" />
-     <Folder Include="Assets\StarterAssets\ThirdPersonController\Character" />
-     <Folder Include="Assets\StarterAssets" />
+     <Folder Include="Assets\Apartment_Door\Models\Materials" />
+     <Folder Include="Assets\AllSkyFree\_AllSkyFreeDemoEnvironment" />
      <Folder Include="Assets\Obi\Samples\RopeAndRod\SampleResources\Textures" />
+     <Folder Include="Assets\AllSkyFree\Overcast Low" />
      <Folder Include="Assets\Obi\Resources\ObiMaterials\URP" />
      <Folder Include="Assets\Materials" />
-     <Folder Include="Assets\StarterAssets\Environment\Prefabs" />
      <Folder Include="Assets\ObiBlueprint" />
      <Folder Include="Assets\Obi\Plugins\Android\arm64-v8a" />
      <None Include="Assets\Shaders\ColoredSurface.shader" />
      <Folder Include="Assets\Obi" />
      <Folder Include="Assets\Prefabs" />
-     <Folder Include="Assets\StarterAssets\Mobile" />
      <Folder Include="Assets\Obi\Samples\RopeAndRod\SampleResources\Models" />
+     <Folder Include="Assets\StylizedHandPaintedDungeon(Free)\Materials" />
      <Folder Include="Assets\Obi\Samples\Cloth\SampleResources\Blueprints" />
-     <Folder Include="Assets\StarterAssets\ThirdPersonController" />
-     <Folder Include="Assets\StarterAssets\ThirdPersonController\Prefabs" />
+     <Folder Include="Assets\Package04_Free_Kitchen\FreeKitchen" />
      <None Include="Assets\Obi\Resources\ObiMaterials\DistanceFieldSlice.shader" />
-     <Folder Include="Assets\StarterAssets\ThirdPersonController\Character\Textures" />
-     <Folder Include="Assets\StarterAssets\Mobile\Scripts\Utilities" />
+     <Folder Include="Assets\Package04_Free_Kitchen\FreeKitchen\Prefabs" />
      <Folder Include="Assets\Obi\Samples\Cloth\SampleResources\Scripts" />
      <Folder Include="Assets\Obi\Samples\Fluid\SampleResources\DistanceFields" />
      <None Include="Assets\Obi\Resources\ObiMaterials\ObiParticles.cginc" />
+     <Folder Include="Assets\AllSkyFree\Cold Sunset" />
+     <Folder Include="Assets\StylizedHandPaintedDungeon(Free)\Textures" />
      <None Include="Assets\Obi\CHANGELOG_softbody.txt" />
+     <Folder Include="Assets\AllSkyFree" />
+     <Folder Include="Assets\Package04_Free_Kitchen\FreeKitchen\Textures" />
+     <Folder Include="Assets\LowPolyDungeonsLite" />
+     <Folder Include="Assets\Apartment_Door\Textures\SimpleDoor" />
      <Folder Include="Assets\Obi\Samples\Common\SampleResources\DistanceFields" />
-     <Folder Include="Assets\StarterAssets\Environment\Art\Skybox" />
+     <Folder Include="Assets\Package04_Free_Kitchen\FreeKitchen\Textures\Version02" />
+     <Folder Include="Assets\Tiny_Toony_City_Demo\Prefabs" />
      <Folder Include="Assets\Obi\Samples\RopeAndRod" />
+     <Folder Include="Assets\StylizedHandPaintedDungeon(Free)\Originals" />
+     <Folder Include="Assets\Apartment_Door\Scripts" />
+     <Folder Include="Assets\AllSkyFree\Night MoonBurst" />
      <None Include="Assets\Obi\Resources\ObiMaterials\UnityStandardCoreBackfaces.cginc" />
      <Folder Include="Assets\Obi\Samples\Fluid" />
      <None Include="Assets\Obi\Resources\ObiMaterials\StandardBackfaces.shader" />
+     <Folder Include="Assets\StylizedHandPaintedDungeon(Free)\Demo\Demo_Scene\Demo_Scene" />
      <None Include="Assets\Obi\Resources\ObiMaterials\StandardVertexColors.shader" />
-     <Folder Include="Assets\StarterAssets\ThirdPersonController\Scenes\Playground" />
+     <Folder Include="Assets\StylizedHandPaintedDungeon(Free)\Demo" />
      <Folder Include="Assets\Obi\Samples\Softbody\SampleResources\Textures" />
-     <Folder Include="Assets\StarterAssets\Mobile\Scripts\CanvasInputs" />
+     <Folder Include="Assets\Tiny_Toony_City_Demo\PolygonBlacksmith\TT_Citizens_demo\animation\male" />
      <Folder Include="Assets\Obi\Samples\RopeAndRod\SampleResources\Blueprints" />
-     <Folder Include="Assets\StarterAssets\ThirdPersonController\Character\Animations" />
+     <Folder Include="Assets\Package04_Free_Kitchen\FreeKitchen\Models" />
      <None Include="Assets\Obi\Resources\ObiMaterials\SimpleParticleShader.shader" />
-     <Folder Include="Assets\StarterAssets\Environment\Art\Models" />
      <Folder Include="Assets\Obi\Samples\Common\SampleResources\Materials" />
-     <Folder Include="Assets\StarterAssets\Mobile\UI" />
+     <Folder Include="Assets\Package04_Free_Kitchen\FreeKitchen\Materials" />
      <Folder Include="Assets\Obi\Samples\Fluid\SampleResources\Materials" />
+     <Folder Include="Assets\Scripts\CubeCollection" />
      <None Include="Assets\Obi\Resources\ObiMaterials\ObiEllipsoids.cginc" />
      <Folder Include="Assets\Obi\Samples\Common\SampleResources\Scripts" />
      <None Include="Assets\Obi\Resources\ObiMaterials\URP\ParticleShaderURP.shader" />
      <Folder Include="Assets\Scripts\Triggers" />
      <Folder Include="Assets\Obi\Samples\Softbody\SampleResources\Models" />
      <Folder Include="Assets\Obi\Samples\Common\SampleResources\Textures" />
+     <Folder Include="Assets\StylizedHandPaintedDungeon(Free)" />
+     <Folder Include="Assets\Package04_Free_Kitchen\FreeKitchen\SRP UpgradePackage" />
      <Folder Include="Assets\Obi\Samples\Softbody\SampleResources\Prefabs" />
      <None Include="Assets\Obi\Resources\ObiMaterials\URP\SimpleParticleShaderURP.shader" />
-     <None Include="Assets\StarterAssets\license.txt" />
-     <Folder Include="Assets\StarterAssets\Mobile\Prefabs\EventSystem" />
+     <Folder Include="Assets\Scripts\ContainerMovement" />
+     <Folder Include="Assets\Tiny_Toony_City_Demo\PolygonBlacksmith" />
      <Folder Include="Assets\Obi\Samples\Cloth\SampleResources\Skinmaps" />
-     <Folder Include="Assets\StarterAssets\Mobile\Prefabs" />
+     <Folder Include="Assets\Package04_Free_Kitchen\FreeKitchen\Prefabs\Version03" />
+     <Folder Include="Assets\Tiny_Toony_City_Demo" />
+     <Folder Include="Assets\Tiny_Toony_City_Demo\PolygonBlacksmith\TT_Citizens_demo\animation" />
      <Folder Include="Assets\Models" />
-     <Folder Include="Assets\StarterAssets\ThirdPersonController\Scenes" />
+     <Folder Include="Assets\Package04_Free_Kitchen\FreeKitchen\Materials\Version03" />
      <Folder Include="Assets\Scripts\PCG" />
-     <Folder Include="Assets\StarterAssets\TutorialInfo" />
-     <Folder Include="Assets\StarterAssets\ThirdPersonController\Character\Sfx" />
-     <Folder Include="Assets\StarterAssets\ThirdPersonController\Character\Models" />
+     <Folder Include="Assets\LowPolyDungeonsLite\Prefabs" />
      <Folder Include="Assets\Obi\Samples\Softbody\SampleResources" />
      <None Include="Assets\Obi\Resources\ObiMaterials\NormalReconstruction.shader" />
      <Folder Include="Assets\Obi\Samples" />
@@ -239,9 +269,9 @@
      <Folder Include="Assets\Obi\Samples\Common\SampleResources\Scripts\CharacterController" />
      <Folder Include="Assets\Obi\Samples\Cloth" />
      <Folder Include="Assets\Obi\Samples\Cloth\SampleResources\Animations" />
-     <Folder Include="Assets\StarterAssets\Mobile\Prefabs\CanvasInputs" />
+     <Folder Include="Assets\AllSkyFree\Space_AnotherPlanet" />
      <Folder Include="Assets\Shaders" />
-     <Folder Include="Assets\StarterAssets\ThirdPersonController\Character\Materials" />
+     <Folder Include="Assets\Apartment_Door\Scenes" />
      <Folder Include="Assets\Scripts\Obi" />
      <Folder Include="Assets\Obi\Samples\Fluid\SampleResources\Models" />
      <Folder Include="Assets\Obi\Samples\RopeAndRod\SampleResources" />
@@ -249,40 +279,60 @@
      <Folder Include="Assets\Obi\Samples\Fluid\SampleResources\Textures" />
      <Folder Include="Assets\Scripts" />
      <Folder Include="Assets\Obi\Samples\Cloth\SampleResources\Materials" />
-     <Folder Include="Assets\StarterAssets\Mobile\Scripts" />
      <Folder Include="Assets\Obi\Samples\Common\SampleResources\CollisionMaterials" />
+     <Folder Include="Assets\Apartment_Door\Materials" />
+     <Folder Include="Assets\Tiny_Toony_City_Demo\PolygonBlacksmith\TT_Citizens_demo\prefabs" />
      <Folder Include="Assets\Obi\Samples\Common" />
      <Folder Include="Assets\Obi\Samples\Common\SampleResources" />
+     <Folder Include="Assets\Apartment_Door\Models" />
+     <Folder Include="Assets\Tiny_Toony_City_Demo\Scenes" />
      <Folder Include="Assets\Obi\Samples\Softbody\SampleResources\Materials" />
+     <Folder Include="Assets\Tiny_Toony_City_Demo\PolygonBlacksmith\TT_Citizens_demo\animation\female" />
+     <Folder Include="Assets\Tiny_Toony_City_Demo\PolygonBlacksmith\TT_Citizens_demo\models\Materials" />
+     <Folder Include="Assets\Package04_Free_Kitchen\FreeKitchen\Materials\Version02" />
      <None Include="Assets\Obi\CHANGELOG.txt" />
      <None Include="Assets\Obi\Resources\ObiMaterials\FluidColorsBlend.shader" />
+     <Folder Include="Assets\Audio" />
      <Folder Include="Assets\Obi\Plugins\iOS" />
-     <Folder Include="Assets\StarterAssets\Mobile\Scripts\VirtualInputs" />
      <Folder Include="Assets\Obi\Samples\RopeAndRod\SampleResources\Animations" />
      <None Include="Assets\Obi\Resources\ObiMaterials\ObiFluids.cginc" />
-     <Folder Include="Assets\StarterAssets\Environment\Art" />
+     <Folder Include="Assets\Package04_Free_Kitchen\FreeKitchen\Textures\Version03" />
+     <Folder Include="Assets\LowPolyDungeonsLite\Materials" />
      <Folder Include="Assets\Obi\Samples\RopeAndRod\SampleResources\Materials" />
-     <Folder Include="Assets\StarterAssets\Environment\RenderPipelineProfiles" />
      <Folder Include="Assets\Obi\Samples\RopeAndRod\SampleResources\Prefabs" />
-     <Folder Include="Assets\StarterAssets\Environment" />
      <None Include="Assets\Obi\CHANGELOG_rope.txt" />
+     <Folder Include="Assets\Settings" />
      <Folder Include="Assets\Obi\Samples\Cloth\SampleResources\Models" />
      <None Include="Assets\Shaders\ScreenCutoutShader.shader" />
      <Folder Include="Assets\Obi\Plugins\Android" />
      <Folder Include="Assets\Obi\Resources\GUI" />
      <None Include="Assets\Obi\Resources\ObiMaterials\FluidShader.shader" />
-     <Folder Include="Assets\StarterAssets\Environment\Art\Textures" />
+     <Folder Include="Assets\Tiny_Toony_City_Demo\Materials" />
+     <Folder Include="Assets\AllSkyFree\Epic_GloriousPink" />
+     <Folder Include="Assets\AllSkyFree\Cartoon Base NightSky" />
+     <Folder Include="Assets\LowPolyDungeonsLite\Models" />
+     <Folder Include="Assets\Tiny_Toony_City_Demo\PolygonBlacksmith\TT_Citizens_demo" />
+     <Folder Include="Assets\Scripts\PCG\Level0_maze" />
+     <Folder Include="Assets\LowPolyDungeonsLite\Textures" />
+     <Folder Include="Assets\AllSkyFree\Epic_BlueSunset" />
+     <Folder Include="Assets\AllSkyFree\Deep Dusk" />
      <Folder Include="Assets\Obi\Samples\Fluid\SampleResources" />
      <Folder Include="Assets\Obi\Plugins" />
+     <Folder Include="Assets\Scripts\PCG\Level1_city" />
      <Folder Include="Assets\Obi\Samples\Fluid\SampleResources\Blueprints" />
      <None Include="Assets\Obi\Resources\ObiMaterials\ObiUtils.cginc" />
+     <Folder Include="Assets\Apartment_Door\Prefabs" />
      <Folder Include="Assets\Obi\Plugins\Android\x86" />
      <Folder Include="Assets\Obi\Plugins\x86_64" />
-     <Folder Include="Assets\StarterAssets\Mobile\Prefabs\VirtualInputs" />
+     <Folder Include="Assets\AllSkyFree\Cartoon Base BlueSky" />
+     <Folder Include="Assets\Package04_Free_Kitchen\FreeKitchen\Scenes" />
      <Folder Include="Assets\myChara" />
-     <Folder Include="Assets\StarterAssets\TutorialInfo\Icons" />
+     <Folder Include="Assets\Package04_Free_Kitchen\FreeKitchen\Prefabs\Version01" />
+     <Folder Include="Assets\Apartment_Door\Textures" />
+     <Folder Include="Assets\Package04_Free_Kitchen" />
      <Folder Include="Assets\Obi\Samples\Cloth\SampleResources\Textures" />
      <None Include="Assets\Obi\Resources\ObiMaterials\URP\ObiFluidsURP.cginc" />
+     <Folder Include="Assets\Tiny_Toony_City_Demo\PolygonBlacksmith\TT_Citizens_demo\animation\samplers" />
      <Folder Include="Assets\Obi\Plugins\Android\armeabi-v7a" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
@@ -534,16 +584,16 @@
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.2f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Collections.LowLevel.ILSupport">
-     <HintPath>F:\SuperStar\Library\PackageCache\com.unity.collections@2.1.4\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\PackageCache\com.unity.collections@2.1.4\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
      </Reference>
      <Reference Include="ReportGeneratorMerged">
-     <HintPath>F:\SuperStar\Library\PackageCache\com.unity.testtools.codecoverage@1.2.4\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\PackageCache\com.unity.testtools.codecoverage@1.2.4\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-     <HintPath>F:\SuperStar\Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Mono.Cecil">
-     <HintPath>F:\SuperStar\Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\Mono.Cecil.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\Mono.Cecil.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.iOS.Extensions.Xcode">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.2f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -927,160 +977,172 @@
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Jobs">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.Jobs.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.Jobs.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.Core.Runtime">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="com.unity.cinemachine.editor">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.AI.Navigation">
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.AI.Navigation.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst.Editor">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.ProBuilder.AddOns.Editor">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.ProBuilder.AddOns.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Rider.Editor">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.Core.Editor">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Flow">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Mathematics.Editor">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TestTools.CodeCoverage.Editor">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Collections">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Collections.Editor">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.Collections.Editor.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.Collections.Editor.dll</HintPath>
      </Reference>
      <Reference Include="PPv2URPConverters">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
      </Reference>
      <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.AI.Navigation.Editor.ConversionSystem">
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VSCode.Editor">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.Universal.Editor">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
      </Reference>
      <Reference Include="Unity.EditorCoroutines.Editor">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Unity.PlasticSCM.Editor">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
      </Reference>
      <Reference Include="Unity.ProBuilder">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.ProBuilder.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.ProBuilder.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline.Editor">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Shared.Editor">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.ShaderGraph.Editor">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualStudio.Editor">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.UI">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Core">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Core.Editor">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.UI">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Flow.Editor">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
      </Reference>
      <Reference Include="Unity.InputSystem">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
      </Reference>
      <Reference Include="Unity.ProBuilder.Editor">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.ProBuilder.Editor.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.ProBuilder.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.InputSystem.ForUI">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.InputSystem.ForUI.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.InputSystem.ForUI.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.AI.Navigation.Updater">
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.State.Editor">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Mathematics">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro.Editor">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Searcher.Editor">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.AI.Navigation.Editor">
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.State">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
      </Reference>
      <Reference Include="Cinemachine">
-     <HintPath>F:\SuperStar\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+     <HintPath>D:\SuperStar_main\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Obi.Editor.csproj">
-      <Project>{cbe5e685-3a06-ddba-151f-f1fd1922ed0a}</Project>
+      <Project>{630713fb-0dc4-d65f-767c-633b5c15d84a}</Project>
       <Name>Obi.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Obi.csproj">
-      <Project>{6c8016e2-3711-2a6d-1779-009d9bef70d8}</Project>
+      <Project>{f24a6222-9de5-8f92-4c12-65aab8d41f45}</Project>
       <Name>Obi</Name>
     </ProjectReference>
   </ItemGroup>

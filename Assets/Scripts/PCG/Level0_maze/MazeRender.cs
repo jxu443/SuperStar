@@ -14,7 +14,10 @@ public class MazeRender : MonoBehaviour
     private int height = 10;
     
     [SerializeField]
-    private Transform Obisolver = null;
+    private ObiSoftbody player = null;
+
+    public ObiSolver solverSoftbody;
+    public ObiSolver solverFluid;
     
     [SerializeField]
     private GameObject catcher = null; 
@@ -30,17 +33,13 @@ public class MazeRender : MonoBehaviour
     [SerializeField]
     private Material frontMaterial = null;
     
-    public float functionDuration = 10f;
+    public float functionDuration = 60f; // time to change the maze
     
     private float duration;
     int cnt; // how many times has reset
 
     MazeGenerator gen;
-
-    private void Awake()
-    {
-        Obisolver.position = new Vector3(-width/2 + 0.5f, height/2 - 1f , 0.6f);
-    }
+    
 
     void Start()
     {
@@ -65,31 +64,43 @@ public class MazeRender : MonoBehaviour
         frontPlane.transform.SetParent(transform.parent, false);
         
         // maze catcher
-        catcher.transform.position = new Vector3(0, -height/2 - 4, 0.2f);
-        catcher.transform.localScale = new Vector3(width + 10f, 2, 3);
+        catcher.transform.position = new Vector3(width/2, -height/2 - 4, 0.2f);
+        catcher.transform.localScale = new Vector3(width + 10f, 1, 3);
         catcher.SetActive(true);
+        
+        // player pos
+        player.Teleport(new Vector3(-width/2 + 0.5f, height/2 - 1f , 0.6f), Quaternion.identity);
+        //Invoke(nameof(movePlayer), .5f);
         
     }
 
-    void Update()
+    void movePlayer()
     {
-        duration += Time.deltaTime;
-        int currCnt = (int) (duration / functionDuration);
-        if (currCnt > cnt) {
-            Debug.Log("maze redraw");
-            cnt++;
-            
-            // destroy all children
-            while (transform.childCount > 0) {
-                DestroyImmediate(transform.GetChild(0).gameObject);
-            }
-            
-            gen = new MazeGenerator(width, height);
-            DrawMaze(gen.Generate()); 
-            
-        }
-        
+        // solverFluid.transform.position = new Vector3(-width/2 + 0.5f, height/2 - 1f , 0.6f);
+        // solverSoftbody.transform.position = new Vector3(-width/2 + 0.5f, height/2 - 1f , 0.6f);
+        player.Teleport(new Vector3(-width/2 + 0.5f, height/2 - 1f , 0.6f), Quaternion.identity);
+
     }
+
+    // void Update()
+    // {
+    //     duration += Time.deltaTime;
+    //     int currCnt = (int) (duration / functionDuration);
+    //     if (currCnt > cnt) {
+    //         Debug.Log("maze redraw");
+    //         cnt++;
+    //         
+    //         // destroy all children
+    //         while (transform.childCount > 0) {
+    //             DestroyImmediate(transform.GetChild(0).gameObject);
+    //         }
+    //         
+    //         gen = new MazeGenerator(width, height);
+    //         DrawMaze(gen.Generate()); 
+    //         
+    //     }
+    //     
+    // }
 
     private async void DrawMaze(WallState[,] maze) {
         for (int i = 0; i < width; i++) {
@@ -128,11 +139,11 @@ public class MazeRender : MonoBehaviour
             }
         }
         
-        // draw phase change trigger
-        var entrance = Instantiate(entrancePrefab) as Transform;
-        //entrance.position = new Vector3( -width/2 + gen.entrance.x, 0, -height/2  + gen.entrance.y + 0.5f);
-        entrance.position = new Vector3( -width/2, 0, height/2 - 0.5f);
-        entrance.SetParent(transform, false); 
+        // //draw phase change trigger
+        // var entrance = Instantiate(entrancePrefab) as Transform;
+        // //entrance.position = new Vector3( -width/2 + gen.entrance.x, 0, -height/2  + gen.entrance.y + 0.5f);
+        // entrance.position = new Vector3( -width/2, 0, height/2 - 0.5f);
+        // entrance.SetParent(transform, false); 
         
         
     }

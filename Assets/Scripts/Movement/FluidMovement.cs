@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using Obi;
 using System;
-using UnityEditor;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class FluidMovement : MonoBehaviour
 {
@@ -13,22 +11,20 @@ public class FluidMovement : MonoBehaviour
     public ObiSoftbody softbody;
     public ObiSolver fluidSolver;
     public ObiFluidEmitterBlueprint fluidBlueprint;
-    
-    // trigger list
-    public ObiCollider sugerTrigger;
     public JugController jc;
-
-    public ObiCollider respawnTrigger = null;
+     //trigger list
+    public ObiCollider sugerTrigger;
+    public ObiCollider toMazeTriggger = null;
 
     private bool freezed = false;
     private float duration = 0;
     private float transitionDuration = -1;
-    private bool moveable = false;
+    public bool moveable = false;
 
     void Start()
     {
-        Debug.Log(" fluid.solverIndices.Length: " + fluid.solverIndices.Length);
-        Debug.Log(" softbody.solverIndices.Length: " + softbody.solverIndices.Length);
+        //Debug.Log(" fluid.solverIndices.Length: " + fluid.solverIndices.Length);
+        //Debug.Log(" softbody.solverIndices.Length: " + softbody.solverIndices.Length);
         fluidSolver.OnCollision += Solver_OnCollision;
     }
     
@@ -47,15 +43,15 @@ public class FluidMovement : MonoBehaviour
                 var col = world.colliderHandles[contact.bodyB].owner;
                 if (sugerTrigger == col)
                 {
-                    //Debug.Log("FluidMOvement: Suger trigger, switch to JugController");
-                    
                     this.enabled = false;
                     jc.enabled = true;
                 } 
-                // else if (respawnTrigger == col)
-                // {
-                //     Debug.Log("FluidMOvement: respawn");
-                // } 
+                if (toMazeTriggger == col)
+                {
+                    this.enabled = false;
+                    toMazeTriggger.gameObject.GetComponent<ToMazeTrigger>().triggerAction();
+                    SycnFluid();
+                } 
             }
         }
     }
@@ -72,11 +68,13 @@ public class FluidMovement : MonoBehaviour
             fluid.solver.velocities[fluidSolverIndex] = softbody.solver.velocities[SBsolverIndex];
         }
         
-        if (fluidSolver.viscosities[0] >= 1f)
-        {
-            moveable = true;
-            freezeMovement();
-        }
+        moveable = true;
+        freezeMovement();
+        // if (fluidSolver.viscosities[0] >= 1f)
+        // {
+        //     moveable = true;
+        //     freezeMovement();
+        // }
     }
 
     private void OnDisable()
@@ -85,7 +83,7 @@ public class FluidMovement : MonoBehaviour
         freezed = false;
         duration = 0;
         transitionDuration = -1;
-        moveable = false;
+        //moveable = false;
     }
 
     
@@ -158,8 +156,13 @@ public class FluidMovement : MonoBehaviour
             }
             return;
         }
-        
 
+        SycnFluid();
+
+    }
+    
+    public void SycnFluid()
+    {
         for (int i = 0; i < fluid.solverIndices.Length; ++i)
         {
             int fluidSolverIndex = fluid.solverIndices[i];
@@ -170,6 +173,5 @@ public class FluidMovement : MonoBehaviour
             fluid.solver.velocities[fluidSolverIndex] = softbody.solver.velocities[SBsolverIndex];
 
         }
-
     }
 }

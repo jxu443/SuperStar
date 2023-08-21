@@ -8,17 +8,22 @@ public class PhaseChange : MonoBehaviour
     public ObiSoftbody softbody;
     public GameObject fluidSolver;
 
-    private bool curPhase = false; // false is soft body 
-    void Start()
+    private bool isFluid = false; 
+    public bool switchPhase = true;
+    
+    // setter and getter
+    public bool IsFluid
     {
-        
+        get => isFluid;
+        set => isFluid = value;
     }
-
+    
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) || switchPhase)
         {
-            if (curPhase) // fluid to soft body
+            switchPhase = false;
+            if (isFluid) // fluid to soft body
             {
                 fluidSolver.GetComponentInChildren<FluidMovement>().enabled = false;
                 fluidSolver.SetActive(false);
@@ -37,10 +42,15 @@ public class PhaseChange : MonoBehaviour
                 fluidSolver.SetActive(true);
                 fluidSolver.GetComponentInChildren<FluidMovement>().enabled = true;
 
-                Debug.Log("softbody to fluid");
+                //Debug.Log("softbody to fluid");
             }
             
-            curPhase = !curPhase;
+            isFluid = !isFluid;
         }
+    }
+    
+    public void SwitchPhase()
+    {
+        switchPhase = true;
     }
 }

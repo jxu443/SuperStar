@@ -82,10 +82,10 @@ public class MazeGenerator
                 //     hasExit = true;
                 //     entrance = new Vector2(curr.X, curr.Y);
                 // }
-                if (!hasEntrance && curr.Y == 0) {
-                    maze[curr.X, curr.Y] &= ~WallState.DOWN; // remove the DOWN wall;
-                    hasEntrance = true;
-                }
+                // if (!hasEntrance && curr.Y == 0) {
+                //     maze[curr.X, curr.Y] &= ~WallState.DOWN; // remove the DOWN wall;
+                //     hasEntrance = true;
+                // }
             }
 
             if (ls.Count > 0) {

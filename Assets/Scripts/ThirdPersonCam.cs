@@ -16,14 +16,17 @@ public class ThirdPersonCam : MonoBehaviour
     public GameObject thirdPersonCam;
     //public GameObject combatCam;
     public GameObject topDownCam;
+    public GameObject fixedCam;
+    public GameObject fixedCamJug;
 
     public CameraStyle currentStyle = CameraStyle.Basic;
 
     public enum CameraStyle
     {
         Basic,
-        //Combat,
-        Topdown
+        Topdown,
+        Fixed,
+        FixedJug,
     }
 
     private void Start()
@@ -61,16 +64,22 @@ public class ThirdPersonCam : MonoBehaviour
         // }
     }
 
-    private void SwitchCameraStyle(CameraStyle newStyle)
+    public void SwitchCameraStyle(CameraStyle newStyle)
     {
-        //combatCam.SetActive(false);
+        if (newStyle == currentStyle) return;
+        
+        fixedCamJug.SetActive(false);
+        fixedCam.SetActive(false);
         thirdPersonCam.SetActive(false);
         topDownCam.SetActive(false);
 
         if (newStyle == CameraStyle.Basic) thirdPersonCam.SetActive(true);
-        //if (newStyle == CameraStyle.Combat) combatCam.SetActive(true);
+        if (newStyle == CameraStyle.Fixed) fixedCam.SetActive(true);
         if (newStyle == CameraStyle.Topdown) topDownCam.SetActive(true);
+        if (newStyle == CameraStyle.FixedJug) fixedCamJug.SetActive(true);
 
         currentStyle = newStyle;
     }
+    
+    
 }
